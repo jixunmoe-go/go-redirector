@@ -1,0 +1,21 @@
+# Where should this redirector be listening at?
+ListenAddr: "127.0.0.1:4001"
+
+# Package: go.company.ltd/namespace/name
+#          ^^^^^^^^^^^^^^
+#          The domain
+#
+# domain part of the package name
+DeployHost: "go.company.ltd"
+
+# meta: import-url & source-url
+ImportURL: "{{ .PackageName }} git ssh://git@git.company.ltd/{{ .Namespace }}/{{ .Name }}.git"
+SourceURL: "{{ .PackageName }} _ {{ .DirectoryURL }} {{ .FileURL }}"
+
+# (optional) links to web-cvs viewer (BitBucket configs)
+BaseWebURL: "https://git.company.ltd/projects/{{ .NamespaceUpper }}/repos/{{ .Name }}"
+DirectoryURL: "{{ .BaseWebURL }}/browse/{/dir}"
+FileURL: "{{ .BaseWebURL }}/browse/{/dir}/{file}#{line}"
+
+# When accessed directly, where should it redirect the user to?
+HomepageURL: "https://company.ltd"
