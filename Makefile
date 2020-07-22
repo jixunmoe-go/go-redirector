@@ -2,9 +2,9 @@ NAME=go-redirector
 BINDIR=bin
 VERSION=$(shell git describe --tags --always)
 BUILDTIME=$(shell date -u)
-GOBUILD=CGO_ENABLED=0 go build -trimpath -ldflags '-X "github.com/jixunmoe/go-redirector.Version=$(VERSION)" \
-		-X "github.com/jixunmoe/go-redirector.BuildTime=$(BUILDTIME)" \
-		-X "github.com/jixunmoe/go-redirector.BuildMode=release" \
+GOBUILD=CGO_ENABLED=0 go build -trimpath -ldflags '-X "main.Version=$(VERSION)" \
+		-X "main.BuildTime=$(BUILDTIME)" \
+		-X "main.BuildMode=release" \
 		-w -s'
 
 PLATFORM_LIST = \
