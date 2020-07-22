@@ -17,7 +17,7 @@ var tplBrowserPage = template.Must(template.New("browser-page").Parse(`<!DOCTYPE
 <html lang="en">
 	<body>
 		<style>body{font-family:sans-serif}h2{margin:0}main pre{margin-top:0}</style>
-		<pre>go get <a href="{{ .BaseURL }}">{{ .PackageName }}</a></pre>
+		<pre>go get <a href="{{ .BaseWebURL }}">{{ .PackageName }}</a></pre>
 		<main>
 			<p>Note: this is a private go module repo. You should this host to <code>GONOPROXY</code>.</p>
 
